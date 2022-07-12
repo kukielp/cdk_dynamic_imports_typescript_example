@@ -1,8 +1,37 @@
-# Welcome to your CDK TypeScript project
+This small example will enable you to Dynamicly swap the imports required when deploying between stages.
 
-This is a blank project for CDK development with TypeScript.
+Configurations for enviroment stages live in ./configs/{stage} currently there is dev and prod
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+To run this example, clone the repo
+
+```
+git clone git@github.com:kukielp/cdk_dynamic_imports_typescript_example.git
+```
+
+install dependancies
+```
+cd cdk_dynamic_imports_typescript_example && npm i
+```
+
+Export a stage
+```
+export stage=dev 
+or
+export stage=prod
+```
+
+and deploy the stack
+```
+cdk deploy
+```
+
+You can chop and change between enviroment in the example, to confirm the changes look at the aws console or use the aws cli to determin that each deployment is taking into consideration the stage enviroment and altering the amoutn of ram assigned to the sample lambda function being deployed.
+
+Clean up
+```
+cdk destroy
+```
+
 
 ## Useful commands
 
